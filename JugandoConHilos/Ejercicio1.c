@@ -1,7 +1,4 @@
-#include<unistd.h>
-#include<stdio.h>
-#include<stdlib.h>
-#include<pthread.h>
+#include "Ejercicio1.h"
 
 void *imprimirMensaje(void *ptr){
     char *mensaje;
