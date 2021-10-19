@@ -1,8 +1,15 @@
+/*
+* Sistemas Operativos 2022-1
+* Equipo 34
+* Tarea 3 - Ejercicio 1
+*/
+
 #include<unistd.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<pthread.h>
 
+/* Método que imprime los mensajes de los hilos. */
 void *imprimirMensaje(void *ptr){
     char *mensaje;
     mensaje = (char *) ptr;
@@ -10,6 +17,7 @@ void *imprimirMensaje(void *ptr){
     sleep(10);
 }
 
+/* Método main() que crea cada hilo imprimiendo los mensajes designados para cada uno. */
 int main()
 {
     pthread_t thread1, thread2, thread3;
@@ -17,7 +25,7 @@ int main()
     const char *mensaje2 = "Soy el hilo 2 ";
     const char *mensaje3 = "Me perdí en la ejecución ";
     int ret1, ret2, ret3;
-    printf("Hilo principal crando al hilo 1\n");
+    printf("Hilo principal creando al hilo 1\n");
     ret1 = pthread_create( &thread1, NULL, imprimirMensaje, (void*) mensaje1);
     if(ret1 != 0){
         printf("Error - pthread_create() codigo de error: %d\n", ret1);
