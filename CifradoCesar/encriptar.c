@@ -15,6 +15,12 @@ printf("El texto cifrado es: %s\n", result);
 return 0;
 }
 
+/*
+*Función que encripta una cadena recorriéndola n posiciones en el alfabeto utilizando un char no-signado para no salir del alfabeto
+*@param msg, el mensaje que pasamos desde el input del usuario
+*@param k, la llave de corrimiento
+*@return msg, el mensaje desencriptado
+*/
 char * encriptar(char* msg, int k) 
     {
     unsigned char caracter;
