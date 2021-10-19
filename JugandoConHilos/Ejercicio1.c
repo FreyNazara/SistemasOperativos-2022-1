@@ -1,21 +1,21 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
+#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<pthread.h>
 
 void *imprimirMensaje(void *ptr){
     char *mensaje;
     mensaje = (char *) ptr;
     printf("%s \n", mensaje);
-    slepp(10);
+    sleep(10);
 }
 
 int main()
 {
     pthread_t thread1, thread2, thread3;
-    const char *mensaje1 = 1 + 2;
-    const char *mensaje2 = " Soy el hilo 2 ";
-    const char *mensaje3 = " Me perdí en la ejecución ";
+    const char *mensaje1 = "1 + 2";
+    const char *mensaje2 = "Soy el hilo 2 ";
+    const char *mensaje3 = "Me perdí en la ejecución ";
     int ret1, ret2, ret3;
     printf("Hilo principal crando al hilo 1\n");
     ret1 = pthread_create( &thread1, NULL, imprimirMensaje, (void*) mensaje1);
